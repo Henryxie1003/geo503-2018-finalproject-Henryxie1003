@@ -187,6 +187,7 @@ EOS$Year<-as.character(EOS$Year)
 
 #Result
 ***
+The plot below shows the NDVI values in the last dacade. Smooth regression is used for better illustration of difference between each year.
 ```{r,echo=FALSE,message=FALSE,warning=FALSE}
 ggplot(data_combine,aes(x=NumDays,y=NDVI,col=Year))+
   geom_smooth(method='auto',span=0.5,fill=NA,se=F)+
@@ -195,14 +196,13 @@ ggplot(data_combine,aes(x=NumDays,y=NDVI,col=Year))+
   theme_bw()
 ```
 <br>
-
+These two graphs show the change of Start of Season and End of Season in past 10 years.
 ```{r,echo=FALSE,message=FALSE,warning=FALSE}
 plot_SOS<-ggplot(data = SOS,aes(x=Year,y=SOS,group=1))+
   geom_line(colour='blue')+
   theme_bw()
 plot_SOS
 ```
-<br>
 
 ```{r,echo=FALSE,message=FALSE,warning=FALSE}
 plot_EOS<-ggplot(data = EOS,aes(x=Year,y=EOS,group=1))+
