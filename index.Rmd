@@ -187,7 +187,7 @@ EOS$Year<-as.character(EOS$Year)
 
 #Result
 ***
-The plot below shows the NDVI values in the last dacade. Smooth regression is used for better illustration of difference between each year.
+The plot below shows the NDVI values in the last dacade. Smooth regression is used for better illustration of difference between each year.  
 ```{r,echo=FALSE,message=FALSE,warning=FALSE}
 ggplot(data_combine,aes(x=NumDays,y=NDVI,col=Year))+
   geom_smooth(method='auto',span=0.5,fill=NA,se=F)+
@@ -196,14 +196,13 @@ ggplot(data_combine,aes(x=NumDays,y=NDVI,col=Year))+
   theme_bw()
 ```
 <br>
-These two graphs show the change of Start of Season and End of Season in past 10 years.
+These two graphs show the change of Start of Season and End of Season in past 10 years.The Y axis describe the number of days in a year which is usually used to denote SOS and EOS.  
 ```{r,echo=FALSE,message=FALSE,warning=FALSE}
 plot_SOS<-ggplot(data = SOS,aes(x=Year,y=SOS,group=1))+
   geom_line(colour='blue')+
   theme_bw()
 plot_SOS
 ```
-
 ```{r,echo=FALSE,message=FALSE,warning=FALSE}
 plot_EOS<-ggplot(data = EOS,aes(x=Year,y=EOS,group=1))+
   geom_line(colour='red')+
@@ -214,8 +213,20 @@ plot_EOS
 
 # Conclusions
 ***
+The previous results illustrate the NDVI of the study area has obvious variance each year. Especially, the difference of NDVI in winter dramatically denote the phenology change between each year. For 2016 and 2017, the relatively higher NDVI values in winter mean more vegetation coverage and photosynthesis activities than other years. This situation could further indicate higher temperature or soil moisture in winter of these years.
 
+The SOS and EOS result is a more visualized way to show how tree phenology change in the past decade. There are several big fluctuations on both SOS and EOS from 2011 to 2016 which indicate potential severe climate change in this period. However, the SOS and EOS result basing on a linear regression model may be robust. There are several other models, such as logistic or double logistic regression, can give more credible results. 
 <br><br>
 
 # References
 ***
+1. Beck, P. S. A., C. Atzberger, K. A. Hogda, B. Johansen, and A. K. Skidmore, 2006, Improved monitoring of vegetation dynamics at very high latitudes: A new method using MODIS NDVI: Remote Sensing of Environment, v. 100, p. 321-334.
+
+2. Chmielewski, F. M., and T. Rotzer, 2001, Response of tree phenology to climate change across Europe: Agricultural and Forest Meteorology, v. 108, p. 101-112.
+
+3. Huete, A., K. Didan, T. Miura, E. P. Rodriguez, X. Gao, and L. G. Ferreira, 2002, Overview of the radiometric and biophysical performance of the MODIS vegetation indices: Remote Sensing of Environment, v. 83, p. 195-213.
+
+4. Ren, J., J. B. Campbell, and Y. Shao, 2017, Estimation of SOS and EOS for Midwestern US Corn and Soybean Crops: Remote Sensing, v. 9.
+
+5. Visser, M. E., and L. J. M. Holleman, 2001, Warmer springs disrupt the synchrony of oak and winter moth phenology: Proceedings of the Royal Society B-Biological Sciences, v. 268, p. 289-294.
+
