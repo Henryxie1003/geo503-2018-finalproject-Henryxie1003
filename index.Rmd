@@ -14,6 +14,9 @@ Phenology has been proven as a sensitive and integrative indicator of climate va
 
 ![](docs/img/ndvi2.png)
 
+<br><br>
+
+
 # Data and methods  
 ***
 ##Data acquisition
